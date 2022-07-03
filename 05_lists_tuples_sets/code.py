@@ -6,6 +6,7 @@ l = ["Bob", "Rolf", "Anne"]
 # tuple - you cannot add or remove item
 # printing is orderly by index t[0]
 t = ("Bob", "Rolf", "Anne")
+single_value_tuple = (5,) # or single_value_tuple = 5,
 # Note: bracket around tuple is not compulsory
 # it is only necessary to avoid confusion especially with a list
 # by clearly indicate you want a tuple and not ordinary list
