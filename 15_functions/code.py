@@ -18,3 +18,6 @@ def user_age_in_seconds():
 
 print("Welcome to the age in seconds program!")
 user_age_in_seconds()
+
+def do_nothing():
+    pass # means do nothing
