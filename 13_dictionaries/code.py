@@ -35,4 +35,4 @@ for friend in friends:
 print(f"Friend at index 1: {friends[1]}")
 
 # check if value exists in keys
-print()
+print("Bob" in friend)
