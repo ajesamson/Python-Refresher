@@ -1,7 +1,8 @@
 # UNPACKING ARGUMENTS
-# Collecting multiple arguments into a single variable
+# Collecting multiple arguments into a single variable (parameter)
 # Collection is made into a tuple
 
+# Packing arguments into parameters
 def multiply(*args):
     total = 1
     print(args)
@@ -28,7 +29,6 @@ print(add(nums_dic["x"], nums_dic["y"]))
 print(add(**nums_dic))
 
 # combining variable packing and named argument
-
 def apply(*args, operator):
     if operator == "*":
         return multiply(*args)
