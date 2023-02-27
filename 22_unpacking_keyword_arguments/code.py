@@ -31,3 +31,11 @@ def both(*args, **kwargs):
     print(kwargs)
 
 both(1, 3, 5, name="Bob", age=25)
+
+
+# Passed arguments must always be a dictionary.
+# If not, an exception would be thrown
+# def doNotExecute(**kwargs):
+#     print(kwargs)
+
+# doNotExecute("Bob", 25)
