@@ -24,6 +24,7 @@ doubled = [double(s) for s in sequence]
 # replacing with lambda function instead of defining a new function
 doubled = [(lambda s: s * 2)(s) for s in sequence]
 # using a map
+# It iterates over each sequence, passing it to double as parameter
 doubled = map(double, sequence)
 # using a map with lambda
 doubled = list(map(lambda s: s * 2, sequence))
