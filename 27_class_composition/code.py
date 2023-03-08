@@ -2,7 +2,7 @@
 # Composition represents HAS-A relationship
 # This is more common than inheritance and allows your class to be simpler
 # and reduce complexity of your code
-from typing import Tuple
+# from typing import List # for type hinting
 
 class Bookshelf:
     def __init__(self, *books: "Book"):
