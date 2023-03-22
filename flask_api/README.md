@@ -14,3 +14,8 @@ $(bash): conda deactive venv # deactivate environment
 ```bash
 $(bash): flask run
 ```
+
+## Build Docker Image
+```bash
+$(bash): docker build -t rest-apis-flask-python .
+```
