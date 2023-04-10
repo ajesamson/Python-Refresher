@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello_world():
-    return {"message": "Welcome to flask store"}
+    return {"message": "Welcome to flash API "}
 
 
 @app.get("/store")
@@ -75,7 +75,6 @@ def get_store(store_id):
         abort(404, message="Store not found.")
 
 
-
 @app.delete("/store/<string:store_id>")
 def delete_store(store_id):
     try:
@@ -84,17 +83,13 @@ def delete_store(store_id):
     except KeyError:
         abort(404, message="Item not found.")
 
+
 @app.get("/<string:name>/item_id")
 def get_item(item_id):
     try:
         return items[item_id]
     except KeyError:
         abort(404, message="Store not found.")
-
-
-@app.get("/item")
-def get_all_items():
-    return {"items": list(items.values())}
 
 
 @app.delete("/item/<string:item_id>")
@@ -106,7 +101,7 @@ def delete_item(item_id):
         abort(404, message="Item not found.")
 
 
-@app.put("item/<string:item_id>")
+@app.put("/item/<string:item_id>")
 def update_item(item_id):
     data = request.get_json()
     if "price" not in data or "name" not in data:
