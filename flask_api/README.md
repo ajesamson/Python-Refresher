@@ -22,5 +22,5 @@ $(bash): docker build -t rest-apis-flask-python .
 
 ## Run Docker Container
 ```bash
-$(bash): docker run -d -p 5000:5000 -w /app -v "${pwd}:/app" flask-image-name
+$(bash): docker run -d -p 5000:5000 -w /app -v "${pwd}:/app" --name flask_api flask-image-name
 ```
