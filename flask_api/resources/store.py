@@ -2,6 +2,10 @@ import uuid
 from flask import request
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
+from models import StoreModel
+from db import db
+from sqlalchemy.exc import SQLAlchemyError, IntegrityError
+
 from schemas import StoreSchema
 
 blp = Blueprint("stores", __name__, description="Operations on stores")
@@ -33,13 +37,14 @@ class StoreList(MethodView):
     @blp.arguments(StoreSchema)
     @blp.response(201, StoreSchema)
     def post(self, validated_data):
-        data = validated_data
-       
-        for store in stores.values():
-            if store["name"] == data["name"]:
-                abort(404, message="Store already exist")
+        store = StoreModel(**validated_data)
 
-        store_id = uuid.uuid4().hex
-        store = {**data, "id": store_id}
-        stores[store_id] = store
+        try:
+            db.session.add(store)
+            db.session.commit()
+        except IntegrityError:
+            abort(400, message="A store with the name already exists.")
+        except SQLAlchemyError:
+            abort(500, message="An error occurred while creating the sore.")
+
         return store
